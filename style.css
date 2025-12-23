@@ -1,0 +1,167 @@
+/* Base Styles */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    color: white;
+    text-align: center;
+    min-height: 100vh;
+    /* Effect 1: Animated Gradient Background */
+    background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Effect 2: Page Reveal Animation */
+.page-content {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 1.5s all ease;
+    padding: 50px 20px;
+}
+
+.page-content.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Buttons */
+.next-btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 40px;
+    background: white;
+    color: #ff6b6b;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    /* Effect 3: Button Pulse */
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Effect 4: Floating Balloons Layer */
+#balloon-container {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.balloon {
+    position: absolute;
+    bottom: -100px;
+    border-radius: 50%;
+    animation: floatUp 8s linear infinite;
+}
+
+@keyframes floatUp {
+    to { transform: translateY(-110vh); }
+}
+/* Styling the box so it's clickable and pretty */
+.shake-box {
+    width: 200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #ff4757;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 0 10px 0 #ff6b81;
+    transition: 0.1s;
+    user-select: none;
+}
+
+.shake-box:active {
+    transform: translateY(5px);
+    box-shadow: 0 5px 0 #ff6b81;
+}
+
+/* The actual Shake Animation */
+@keyframes shake-effect {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-10px) rotate(-5deg); }
+    50% { transform: translateX(10px) rotate(5deg); }
+    75% { transform: translateX(-10px) rotate(-5deg); }
+    100% { transform: translateX(0); }
+}
+
+.shake-anim {
+    animation: shake-effect 0.5s ease-in-out;
+}
+/* Effect #9: Photo Styling */
+/* This centers the entire content of the page */
+.page-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* Horizontal Center */
+    justify-content: center; /* Vertical Center */
+    text-align: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* This targets the container and ensures it doesn't float */
+.group-photo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+/* This controls the actual image size */
+.squad-img {
+    width: 100px;           /* Adjust this number to make it smaller or larger */
+    height: auto;           /* Maintains aspect ratio */
+    border: 8px solid white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* Makes the text more readable */
+.glow-text {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+/* Hover effect to make it interactive */
+.group-photo:hover {
+    transform: scale(1.05) rotate(2deg); /* Tilts slightly when Udit hovers */
+}
+/* Styling for Prince's specific message color */
+.prince-message {
+    color: #2f29eb; /* This is a bright Gold color */
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* Makes it pop against the background */
+    line-height: 1.6;
+}
+.sana-message {
+    color: #2f29eb; /* This is a bright Gold color */
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* Makes it pop against the background */
+    line-height: 1.6;
+}
+.priyansh-message {
+    color: #2f29eb; /* This is a bright Gold color */
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* Makes it pop against the background */
+    line-height: 1.6;
+}
+.main-message {
+ color: #0d100e;  
+ font-size: 1.2rem; 
+}
